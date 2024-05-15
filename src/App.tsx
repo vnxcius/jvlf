@@ -1,30 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Header from "./components/header"
+
 import './App.css'
+import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card"
+import { Separator } from "./components/ui/separator"
+import CardOption from "./components/ui/card-option"
+import { useState } from "react"
+import { Button } from "./components/ui/button"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [file, setFile] = useState<string>("")
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Oiii</h1>
-      <div className="card">
-        <p>
-          JVLF (Jéssica, Vinícius, Lusianna e Fabiane)
-        </p>
-        <button onClick={() => setCount((count) => count + 1)}>
-          contagem {count}
-        </button>
-      </div>
+      <Header />
+      <section className="md:max-w-screen-2xl mx-auto my-4 p-3 font-inter flex max-md:flex-col gap-4 h-[calc(100vh-110px)]">
+        <div className="w-fit">
+          <Card>
+            <CardHeader className="p-2 px-6">
+              <CardTitle className="text-lg">Baixar arquivos</CardTitle>
+            </CardHeader>
+            <Separator />
+            <CardContent>
+              <CardOption title="PDTI Banco do Brasil 2024-26" file="pdti.pdf" func={() => setFile("pdti.pdf")} />
+              <CardOption title="PSI Banco do Brasil" file="psi.pdf" func={() => setFile("psi.pdf")} disabled />
+            </CardContent>
+          </Card>
+        </div>
+        <div className="w-full h-full flex flex-col bg-white shadow-sm border p-3 rounded-lg">
+          {file ? (
+            <>
+              <h2 className="text-sm text-center font-medium mb-3">{file}</h2>
+              <iframe src={file} className="w-full h-full rounded-md border shadow-sm" allowFullScreen></iframe>
+              <Button variant="outline" className="mt-3 w-fit mx-auto" onClick={() => setFile("")}>
+                Fechar arquivo
+              </Button>
+            </>
+          ) : (
+            <p className="text-center flex flex-col self-center justify-center h-full text-neutral-500">Selecione um arquivo ao lado para visualizar</p>
+          )}
+        </div>
+      </section>
     </>
   )
 }
