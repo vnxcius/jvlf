@@ -14,14 +14,14 @@ function App() {
     <>
       <Header />
       <section className="md:max-w-screen-2xl mx-auto my-4 p-3 font-inter flex max-md:flex-col gap-4 h-[calc(100vh-110px)]">
-        <div className="w-fit">
+        <div className="w-fit mx-auto">
           <Card>
             <CardHeader className="p-2 px-6">
               <CardTitle className="text-lg">Baixar arquivos</CardTitle>
             </CardHeader>
             <Separator />
             <CardContent>
-              <CardOption title="PDTI Banco do Brasil 2024-26" file="pdti.pdf" func={() => setFile("pdti.pdf")} />
+              <CardOption title="PDTI Banco do Brasil 2024-26" file="pdti-v0.0.0.pdf" func={() => setFile("pdti-v0.0.0.pdf")} />
               <CardOption title="PSI Banco do Brasil" file="psi.pdf" func={() => setFile("psi.pdf")} disabled />
             </CardContent>
           </Card>
