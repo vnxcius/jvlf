@@ -1,14 +1,29 @@
+import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card"
+import { Separator } from "./components/ui/separator"
+import { useEffect, useState } from "react"
+import { Button } from "./components/ui/button"
+import CardOption from "./components/ui/card-option"
 import Header from "./components/header"
 
 import './App.css'
-import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card"
-import { Separator } from "./components/ui/separator"
-import CardOption from "./components/ui/card-option"
-import { useState } from "react"
-import { Button } from "./components/ui/button"
+
+type Files = {
+  title: string,
+  url: string,
+  size: string,
+  type: string,
+}
 
 function App() {
-  const [file, setFile] = useState<string>("")
+  const [file, setFile] = useState<Files>()
+  const [files, setFiles] = useState<Files[]>([])
+
+  useEffect(() => {
+    fetch('/files.json')
+      .then(response => response.json())
+      .then(data => setFiles(data))
+      .catch(error => console.error('Error loading the files:', error));
+  }, []);
 
   return (
     <>
@@ -36,30 +51,45 @@ function App() {
               <ul className="list-disc list-inside">
                 <li>PDTI</li>
               </ul>
+              <p className="text-sm text-center text-neutral-400 invisible hidden md:flex md:visible">
+                <span>&copy; Made by &nbsp;</span>
+                <a href="https://github.com/vnxcius/jvlf" className="underline font-medium hover:text-blue-500">
+                  Vinícius Hilton
+                </a>
+                <span className="text-xs text-neutral-400 mx-4 self-end">v0.1.4</span>
+              </p>
             </CardContent>
           </Card>
           <Card>
             <CardTitle className="text-base py-2 px-6 text-neutral-800">Baixar arquivos</CardTitle>
             <Separator />
             <CardContent>
-              <CardOption
-                title="PDTI Banco do Brasil 2025-26" file="pdti-v0.0.0.pdf" func={() => { setFile("pdti-v0.0.0.pdf"); location.href = "#pdf" }} />
-              <CardOption title="PSI Banco do Brasil" file="psi.pdf" func={() => setFile("psi.pdf")} disabled />
+              {files.map(file => (
+                <CardOption
+                  key={file.url}
+                  title={file.title}
+                  file={file.url}
+                  size={file.size}
+                  func={() => { setFile(file); location.href = "#pdf" }}
+                />
+              ))}
             </CardContent>
           </Card>
-
         </div>
+
         <div className="w-full min-h-[calc(100vh-110px)] flex flex-col bg-white shadow-sm border p-3 rounded-lg">
           {file ? (
             <>
-              <h2 className="text-sm text-center font-medium mb-3">{file}</h2>
-              <iframe title={file} src={file} id="pdf" className="w-full h-full rounded-md border shadow-sm" allowFullScreen></iframe>
-              <Button variant="outline" className="mt-3 w-fit mx-auto" onClick={() => setFile("")}>
+              <h2 className="text-sm text-center font-medium mb-3">{file.title}</h2>
+              <iframe title={file.title} src={file.url} id="pdf" className="w-full h-full rounded-md border shadow-sm" allowFullScreen></iframe>
+              <Button variant="outline" className="mt-3 w-fit mx-auto" onClick={() => setFile(undefined)}>
                 Fechar arquivo
               </Button>
             </>
           ) : (
-            <p className="text-center flex flex-col self-center justify-center h-full text-neutral-500">Selecione um arquivo ao lado para visualizar</p>
+            <p className="text-center flex flex-col self-center justify-center h-full text-neutral-500">
+              Selecione um arquivo ao lado para visualizar
+            </p>
           )}
         </div>
       </section>
