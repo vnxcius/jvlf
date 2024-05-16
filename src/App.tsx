@@ -30,7 +30,7 @@ function App() {
           {file ? (
             <>
               <h2 className="text-sm text-center font-medium mb-3">{file}</h2>
-              <iframe src={file} className="w-full h-full rounded-md border shadow-sm" allowFullScreen></iframe>
+              <iframe title={file} src={file} className="w-full h-full rounded-md border shadow-sm" allowFullScreen></iframe>
               <Button variant="outline" className="mt-3 w-fit mx-auto" onClick={() => setFile("")}>
                 Fechar arquivo
               </Button>

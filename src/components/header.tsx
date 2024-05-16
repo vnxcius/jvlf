@@ -43,7 +43,7 @@ const Header = () => {
               </ul>
               <SheetFooter>
                 <p className="text-sm text-center text-neutral-400">
-                  &copy; Made by &nbsp;
+                  <span>&copy; Made by &nbsp;</span>
                   <a href="https://github.com/vnxcius/jvlf" className="underline font-medium">
                     Vinícius Hilton
                   </a>
