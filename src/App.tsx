@@ -51,6 +51,13 @@ function App() {
               <ul className="list-disc list-inside">
                 <li>PDTI</li>
               </ul>
+              <p className="text-sm text-center text-neutral-400 invisible hidden md:flex md:visible">
+                <span>&copy; Made by &nbsp;</span>
+                <a href="https://github.com/vnxcius/jvlf" className="underline font-medium hover:text-blue-500">
+                  Vinícius Hilton
+                </a>
+                <span className="text-xs text-neutral-400 mx-4 self-end">v0.1.4</span>
+              </p>
             </CardContent>
           </Card>
           <Card>
@@ -69,7 +76,7 @@ function App() {
             </CardContent>
           </Card>
         </div>
-        
+
         <div className="w-full min-h-[calc(100vh-110px)] flex flex-col bg-white shadow-sm border p-3 rounded-lg">
           {file ? (
             <>
