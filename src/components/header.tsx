@@ -28,7 +28,7 @@ const Header = () => {
           {/* Mobile nav */}
           <Sheet>
             <SheetTrigger className="px-10 py-5" disabled={!isMobile}>
-                <img src="/group.svg" alt="ícone de um grupo de pessoas" className="w-7" />
+                <img src="/icons/group.svg" alt="ícone de um grupo de pessoas" className="w-7" />
             </SheetTrigger>
             <SheetContent className="font-inter">
               <SheetHeader>
