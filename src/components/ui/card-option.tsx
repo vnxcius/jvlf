@@ -30,9 +30,8 @@ const CardOption = (props: Props) => {
       </div>
       <div className="flex gap-3 items-center">
         <AlertDialog>
-
-          <AlertDialogTrigger disabled={props.disabled}>
-            <DownloadIcon width={16} color="#2563eb" />
+          <AlertDialogTrigger disabled={props.disabled} className={props.disabled ? "cursor-not-allowed p-1" : "p-1"}>
+            <DownloadIcon width={16} color={props.disabled ? "#6b7280" : "#2563eb"} />
           </AlertDialogTrigger>
           <AlertDialogContent>
             <AlertDialogHeader>
@@ -52,8 +51,8 @@ const CardOption = (props: Props) => {
           </AlertDialogContent>
         </AlertDialog>
 
-        <button onClick={props.func} className="p-1" title="Visualizar" disabled={props.disabled}>
-          <EyeIcon width={16} color="#2563eb" />
+        <button onClick={props.func} className={props.disabled ? "cursor-not-allowed p-1" : "p-1"} title="Visualizar" disabled={props.disabled}>
+          <EyeIcon width={16} color={props.disabled ? "#6b7280" : "#2563eb"} />
         </button>
       </div>
     </div>
