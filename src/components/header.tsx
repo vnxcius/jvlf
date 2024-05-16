@@ -26,10 +26,8 @@ const Header = () => {
 
         <div className="flex items-center border-l border-e-neutral-300 h-full">
           <Sheet>
-            <SheetTrigger>
-              <button className="px-10 py-5" disabled={!isMobile}>
+            <SheetTrigger className="px-10 py-5" disabled={!isMobile}>
                 <img src="/group.svg" alt="ícone de um grupo de pessoas" className="w-7" />
-              </button>
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
