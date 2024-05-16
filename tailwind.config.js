@@ -18,7 +18,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        'archivo-black': ['"Archivo Black"', 'sans-serif'],
+        'anton': ['"Anton"', 'sans-serif'],
         'inter': ['"Inter"', 'sans-serif'],
       },
       keyframes: {
