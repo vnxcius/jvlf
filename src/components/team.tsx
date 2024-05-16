@@ -15,12 +15,14 @@ const Team = () => {
           <DropdownMenuTrigger className="hover:underline underline-offset-2">
             Jéssica
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="text-center">
+          <DropdownMenuContent className="text-center font-inter">
             <DropdownMenuLabel>Contatos</DropdownMenuLabel>
             <DropdownMenuSeparator className="bg-neutral-300" />
-            <DropdownMenuItem className="cursor-pointer">
-              <a href="https://www.linkedin.com">Linkedin</a>
-            </DropdownMenuItem>
+            <a href="https://www.linkedin.com/in/j%C3%A9ssica-simas-84322059/" target="_blank" referrerPolicy="no-referrer">
+              <DropdownMenuItem className="cursor-pointer">
+                Linkedin
+              </DropdownMenuItem>
+            </a>
           </DropdownMenuContent>
         </DropdownMenu>
       </li>
@@ -29,18 +31,24 @@ const Team = () => {
           <DropdownMenuTrigger className="hover:underline underline-offset-2">
             Vinícius
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="text-center">
+          <DropdownMenuContent className="text-center font-inter">
             <DropdownMenuLabel>Contatos</DropdownMenuLabel>
             <DropdownMenuSeparator className="bg-neutral-300" />
-            <DropdownMenuItem className="cursor-pointer">
-              <a href="https://www.linkedin.com">Linkedin</a>
-            </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer">
-              <a href="https://www.linkedin.com">Portfólio</a>
-            </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer">
-              <a href="https://www.linkedin.com">Github</a>
-            </DropdownMenuItem>
+            <a href="https://www.linkedin.com/in/vinicius-simon-gouveia-hilton" target="_blank" referrerPolicy="no-referrer">
+              <DropdownMenuItem className="cursor-pointer">
+                Linkedin
+              </DropdownMenuItem>
+            </a>
+            <a href="https://vinisimon.dev" target="_blank" referrerPolicy="no-referrer">
+              <DropdownMenuItem className="cursor-pointer">
+                Portfólio
+              </DropdownMenuItem>
+            </a>
+            <a href="https://github.com/vnxcius" target="_blank" referrerPolicy="no-referrer">
+              <DropdownMenuItem className="cursor-pointer">
+                Github
+              </DropdownMenuItem>
+            </a>
           </DropdownMenuContent>
         </DropdownMenu>
       </li>
@@ -49,12 +57,14 @@ const Team = () => {
           <DropdownMenuTrigger className="hover:underline underline-offset-2">
             Lusianna
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="text-center">
+          <DropdownMenuContent className="text-center font-inter">
             <DropdownMenuLabel>Contatos</DropdownMenuLabel>
             <DropdownMenuSeparator className="bg-neutral-300" />
-            <DropdownMenuItem className="cursor-pointer">
-              <a href="https://www.linkedin.com">Linkedin</a>
-            </DropdownMenuItem>
+            <a href="https://www.linkedin.com/in/lusianna-assun%C3%A7%C3%A3o-27a595143/" target="_blank" referrerPolicy="no-referrer">
+              <DropdownMenuItem className="cursor-pointer">
+                Linkedin
+              </DropdownMenuItem>
+            </a>
           </DropdownMenuContent>
         </DropdownMenu>
       </li>
@@ -63,12 +73,14 @@ const Team = () => {
           <DropdownMenuTrigger className="hover:underline underline-offset-2">
             Fabiane
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="text-center">
+          <DropdownMenuContent className="text-center font-inter">
             <DropdownMenuLabel>Contatos</DropdownMenuLabel>
             <DropdownMenuSeparator className="bg-neutral-300" />
-            <DropdownMenuItem className="cursor-pointer">
-              <a href="https://www.linkedin.com">Linkedin</a>
-            </DropdownMenuItem>
+            <a href="https://www.linkedin.com" target="_blank" referrerPolicy="no-referrer">
+              <DropdownMenuItem className="cursor-pointer">
+                Linkedin
+              </DropdownMenuItem>
+            </a>
           </DropdownMenuContent>
         </DropdownMenu>
       </li>
