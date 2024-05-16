@@ -49,7 +49,9 @@ function App() {
                 Os seguintes arquivos estão disponíveis para download:
               </p>
               <ul className="list-disc list-inside">
-                <li>PDTI</li>
+                {files.map(file => (
+                  <li key={file.url}>{file.title}</li>
+                ))}
               </ul>
               <p className="text-sm text-center text-neutral-400 invisible hidden md:flex md:visible">
                 <span>&copy; Made by &nbsp;</span>
