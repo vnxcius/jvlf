@@ -1,9 +1,12 @@
+import { DialogHeader, Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from "./components/ui/dialog"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "./components/ui/carousel"
 import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card"
 import { Separator } from "./components/ui/separator"
 import { useEffect, useState } from "react"
 import { Button } from "./components/ui/button"
 import CardOption from "./components/ui/card-option"
 import Header from "./components/header"
+import ViniAbout from "./components/vini_about"
 
 import './App.css'
 
@@ -14,28 +17,100 @@ type Files = {
   type: string,
 }
 
+type People = {
+  img: string,
+  name: string,
+  abbreviation: string,
+}
+
 function App() {
-  const [file, setFile] = useState<Files>()
-  const [files, setFiles] = useState<Files[]>([])
+  const [file, setFile] = useState<Files>();
+  const [files, setFiles] = useState<Files[]>([]);
+  const [people, setPeople] = useState<People[]>([]);
+
+  const render = (param: string) => {
+    switch (param) {
+      case 'VH':
+        return <ViniAbout />
+      case 'JS':
+        return 'Jéssica Simas'
+      case 'LA':
+        return 'Lusianna Assunção'
+      case 'FM':
+        return 'Fabiane Moreno'
+    }
+  }
 
   useEffect(() => {
+    // Pegar os arquivos disponíveis para download
     fetch('/files.json')
       .then(response => response.json())
       .then(data => setFiles(data))
-      .catch(error => console.error('Error loading the files:', error));
+      .catch(error => console.error('Error loading files.json:', error));
+
+    // Listar informação dos integrantes
+    fetch('/group.json')
+      .then(response => response.json())
+      .then(data => setPeople(data))
+      .catch(error => console.error('Error loading group.json:', error));
   }, []);
 
   return (
     <>
       <Header />
-      <section className="mx-auto p-3 flex max-md:flex-col gap-4 h-[calc(100vh-63px)] overflow-auto">
+      <section className="mx-auto p-3 md:max-w-6xl">
+        <h1 className="text-2xl text-neutral-700 font-bold text-center">Integrantes</h1>
+        <h3 className="text-sm text-neutral-500 mb-5 text-center">Clique na imagem para saber mais.</h3>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+            dragFree: true,
+          }}
+          className="w-full max-w-sm md:max-w-2xl lg:max-w-7xl mx-auto"
+        >
+          <CarouselContent>
+            {Array.from(people).map((person) => (
+              <CarouselItem key={person.name} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <Card>
+                    <CardContent className="p-0 flex flex-col aspect-square items-center justify-center">
+                      <Dialog>
+                        <DialogTrigger>
+                          <img src={person.img} alt={person.name}
+                            className="size-56 object-cover rounded-md min-h-72 min-w-72 hover:brightness-90
+                            md:min-w-48 md:min-h-48 lg:min-h-[18rem] lg:min-w-[20rem]" />
+                          <span className="text-neutral-800 my-2 block hover:underline">{person.name}</span>
+                        </DialogTrigger>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle>Sobre</DialogTitle>
+                            <DialogDescription>
+                              Conheça mais sobre <span className="text-neutral-800 font-medium">{person.name}</span>
+                            </DialogDescription>
+                          </DialogHeader>
+                          {/* Renderizar o sobre do integrante */}
+                          {render(person.abbreviation)}
+                        </DialogContent>
+                      </Dialog>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel>
+      </section>
+      <section className="mx-auto px-6 pb-52 flex max-md:flex-col gap-4 h-[calc(100vh-63px)]">
         <div className="w-fit mx-auto space-y-3">
           <Card>
             <CardHeader className="py-2 px-6">
               <CardTitle className="text-base">Sobre</CardTitle>
             </CardHeader>
             <Separator />
-            <CardContent className="max-w-96 mt-2 space-y-3 text-sm text-neutral-800">
+            <CardContent className="max-w-sm mt-2 space-y-3 text-sm text-neutral-800">
               <p>
                 Este website tem como objetivo apresentar a proposta
                 do{' '}
