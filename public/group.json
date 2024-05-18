@@ -1,0 +1,22 @@
+[
+  {
+    "img": "/img/jess.jpeg",
+    "name": "Jéssica Simas",
+    "abbreviation": "JS"
+  },
+  {
+    "img": "/img/vini.webp",
+    "name": "Vinícius Hilton",
+    "abbreviation": "VH"
+  },
+  {
+    "img":"/img/default.webp",
+    "name": "Lusianna Assunção",
+    "abbreviation": "LA"
+  },
+  {
+    "img":"/img/default.webp",
+    "name": "Fabiane Moreno",
+    "abbreviation": "FM"
+  }
+]
