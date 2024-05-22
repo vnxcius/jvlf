@@ -5,23 +5,23 @@ const ViniAbout = () => {
         <h3 className='text-center text-lg text-neutral-800 font-semibold mb-2'>Stack</h3>
         <div className='flex justify-center gap-4 items-center'>
           <img className='size-9' alt='golang icon' draggable='false'
-            src='https://upload.wikimedia.org/wikipedia/commons/0/05/Go_Logo_Blue.svg' />
+            src='/icons/go.svg' />
           <img className='size-7' alt='react icon' draggable='false'
-            src='https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg' />
+            src='/icons/react.svg' />
           <img className='size-7' alt='tailwind icon' draggable='false'
-            src='https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg' />
-          <img className='size-6' alt='typescript logo' draggable='false'
-            src='https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg' />
-          <img className='w-10 h-5' alt='php icon' draggable='false'
-            src='https://cdn.worldvectorlogo.com/logos/php-1.svg' />
-          <img className='size-7 object-contain' alt='docker icon' draggable='false'
-            src='https://www.docker.com/wp-content/uploads/2023/05/symbol_blue-docker-logo.png' />
+            src='/icons/tailwind.svg' />
+          <img className='size-7' alt='typescript logo' draggable='false'
+            src='/icons/typescript.svg' />
+          <img className='size-7' alt='php icon' draggable='false'
+            src='/icons/php.svg' />
+          <img className='size-7' alt='docker icon' draggable='false'
+            src='/icons/docker.svg' />
           <img className='size-7' alt='laravel icon' draggable='false'
-            src='https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg' />
+            src='/icons/laravel.svg' />
           <img className='size-7' alt='postgresql icon' draggable='false'
-            src='https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg' />
-          <img className='size-10' alt='postgresql icon' draggable='false'
-            src='https://upload.wikimedia.org/wikipedia/commons/0/0a/MySQL_textlogo.svg' />
+            src='/icons/postgresql.svg' />
+          <img className='size-7' alt='mysql icon' draggable='false'
+            src='/icons/mysql.svg' />
         </div>
       </section>
 

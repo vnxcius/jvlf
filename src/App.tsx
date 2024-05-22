@@ -71,15 +71,15 @@ function App() {
         >
           <CarouselContent>
             {Array.from(people).map((person) => (
-              <CarouselItem key={person.name} className="md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={person.name} className="md:basis-1/2 lg:basis-1/4">
                 <div className="p-1">
                   <Card>
-                    <CardContent className="p-0 flex flex-col aspect-square items-center justify-center">
+                    <CardContent className="p-3 flex flex-col aspect-square items-center justify-center">
                       <Dialog>
                         <DialogTrigger>
                           <img src={person.img} alt={person.name}
-                            className="size-56 object-cover rounded-md min-h-72 min-w-72 hover:brightness-90
-                            md:min-w-48 md:min-h-48 lg:min-h-[18rem] lg:min-w-[20rem]" />
+                            className="size-56 object-cover object-top rounded-md min-h-72 min-w-72 hover:brightness-90
+                            md:min-w-48 md:min-h-48 lg:min-h-56 lg:min-w-[10rem]" />
                           <span className="text-neutral-800 my-2 block hover:underline">{person.name}</span>
                         </DialogTrigger>
                         <DialogContent>
