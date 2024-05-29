@@ -146,6 +146,10 @@ function App() {
           {file ? (
             <>
               <h2 className="text-sm text-center font-medium mb-3">{file.title}</h2>
+              <a href={'/visualizar-arquivo/'+file.slug} target="_blank"  className="w-fit mx-auto mb-3">
+                <Button>Visualizar em tela cheia</Button>
+              </a>
+
               <iframe title={file.title} src={file.url} id="pdf" className="w-full h-full rounded-md border shadow-sm" allowFullScreen></iframe>
               <Button variant="outline" className="mt-3 w-fit mx-auto" onClick={() => setFile(undefined)}>
                 Fechar arquivo

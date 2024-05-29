@@ -26,12 +26,12 @@ const CardOption = (props: Props) => {
     <div className={"border rounded-md my-3 px-4 py-1.5 max-w-96 w-max flex items-center gap-10 justify-between hover:bg-neutral-100 duration-300 " +
       (props.disabled && "cursor-not-allowed bg-neutral-100 text-neutral-500")
     }>
-      <div className="flex gap-3 items-center w-56">
+      <a href={'/visualizar-arquivo/'+props.slug} target="_blank" className="flex gap-3 items-center w-56">
         <p className="text-sm font-medium text-neutral-800 overflow-hidden text-nowrap text-ellipsis" title={props.title}>
           {props.title}
         </p>
         <span className="text-neutral-600 text-xs font-medium ml-3">{props.size}</span>
-      </div>
+      </a>
       <div className="flex gap-3 items-center">
         <AlertDialog>
           <AlertDialogTrigger title="Baixar" disabled={props.disabled} className={props.disabled ? "cursor-not-allowed p-1" : "p-1"}>
