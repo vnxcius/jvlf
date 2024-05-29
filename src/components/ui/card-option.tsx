@@ -14,6 +14,7 @@ import {
 
 type Props = {
   title: string,
+  slug?: string,
   file?: string,
   size?: string,
   disabled?: boolean,
@@ -22,13 +23,14 @@ type Props = {
 
 const CardOption = (props: Props) => {
   return (
-    <div className={"border rounded-md my-3 px-4 py-1.5 min-w-max w-[350px] flex items-center gap-10 justify-between hover:bg-neutral-100 duration-300 " +
+    <div className={"border rounded-md my-3 px-4 py-1.5 max-w-96 w-max flex items-center gap-10 justify-between hover:bg-neutral-100 duration-300 " +
       (props.disabled && "cursor-not-allowed bg-neutral-100 text-neutral-500")
     }>
-      <div>
-        <p className="text-sm font-medium text-neutral-800">
+      <div className="flex gap-3 items-center w-56">
+        <p className="text-sm font-medium text-neutral-800 overflow-hidden text-nowrap text-ellipsis" title={props.title}>
           {props.title}
-          <span className="text-neutral-600 text-xs font-medium ml-3">{props.size}</span></p>
+        </p>
+        <span className="text-neutral-600 text-xs font-medium ml-3">{props.size}</span>
       </div>
       <div className="flex gap-3 items-center">
         <AlertDialog>
@@ -45,7 +47,7 @@ const CardOption = (props: Props) => {
             <AlertDialogFooter>
               <AlertDialogCancel>Cancelar</AlertDialogCancel>
               <AlertDialogAction className="bg-blue-600 hover:bg-blue-700">
-                <a href={props.file} download={props.file} className="p-1 cursor-pointer">
+                <a href={props.file} download={props.slug} className="p-1 cursor-pointer">
                   Baixar arquivo
                 </a>
               </AlertDialogAction>
