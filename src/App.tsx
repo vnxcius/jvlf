@@ -10,19 +10,6 @@ import ViniAbout from "./components/vini_about"
 
 import './App.css'
 
-type Files = {
-  title: string,
-  url: string,
-  size: string,
-  type: string,
-}
-
-type People = {
-  img: string,
-  name: string,
-  abbreviation: string,
-}
-
 function App() {
   const [file, setFile] = useState<Files>();
   const [files, setFiles] = useState<Files[]>([]);
@@ -133,7 +120,7 @@ function App() {
                 <a href="https://github.com/vnxcius/jvlf" className="underline font-medium hover:text-blue-500">
                   Vinícius Hilton
                 </a>
-                <span className="text-xs text-neutral-400 mx-4 self-end">v0.1.4</span>
+                <span className="text-xs text-neutral-400 mx-4 self-end">v0.1.6</span>
               </p>
             </CardContent>
           </Card>
@@ -144,6 +131,7 @@ function App() {
               {files.map(file => (
                 <CardOption
                   key={file.url}
+                  slug={file.slug}
                   title={file.title}
                   file={file.url}
                   size={file.size}
