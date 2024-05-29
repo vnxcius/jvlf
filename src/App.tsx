@@ -63,7 +63,7 @@ function App() {
                   <Card>
                     <CardContent className="p-3 flex flex-col aspect-square items-center justify-center">
                       <Dialog>
-                        <DialogTrigger>
+                        <DialogTrigger disabled={person.abbreviation == ''}>
                           <img src={person.img} alt={person.name}
                             className="size-56 object-cover object-top rounded-md min-h-72 min-w-72 hover:brightness-90
                             md:min-w-48 md:min-h-48 lg:min-h-56 lg:min-w-[10rem]" />
@@ -146,7 +146,7 @@ function App() {
           {file ? (
             <>
               <h2 className="text-sm text-center font-medium mb-3">{file.title}</h2>
-              <a href={'/visualizar-arquivo/'+file.slug} target="_blank"  className="w-fit mx-auto mb-3">
+              <a href={'/visualizar-arquivo/' + file.slug} target="_blank" className="w-fit mx-auto mb-3">
                 <Button>Visualizar em tela cheia</Button>
               </a>
 
