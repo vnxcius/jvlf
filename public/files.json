@@ -1,8 +1,16 @@
 [
   {
     "title": "PDTI Banco do Brasil 2025-26",
-    "url": "/archives/pdti-v0.0.0.pdf",
-    "size": "887,7Kb",
+    "slug": "pdti-bb-2025-26",
+    "url": "/archives/pdti-v1.0.0.pdf",
+    "size": "1,6Mb",
+    "type": "application/pdf"
+  },
+  {
+    "title": "PSI e Cibernética do Banco do Brasil S.A. 2024",
+    "slug": "psi-bb-2024",
+    "url": "/archives/psi-v1.0.0.pdf",
+    "size": "285,7Kb",
     "type": "application/pdf"
   }
 ]
