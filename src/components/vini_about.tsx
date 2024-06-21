@@ -50,8 +50,8 @@ const ViniAbout = () => {
           </li>
         </ul>
         <p className='text-neutral-700 my-5 flex items-center gap-1'>
-          Conheça meu website portfólio: <a href='https://vinisimon.dev' target='_blank'
-            className='flex items-center gap-1 text-violet-600 w-fit hover:underline underline-offset-2'>vinisimon.dev</a>
+          Conheça meu website portfólio: <a href='https://vncius.dev' target='_blank'
+            className='flex items-center gap-1 text-violet-600 w-fit hover:underline underline-offset-2'>vncius.dev</a>
           <img className='size-3' alt=''
             src='https://upload.wikimedia.org/wikipedia/commons/6/6a/External_link_font_awesome.svg' />
         </p>

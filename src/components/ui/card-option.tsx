@@ -27,7 +27,7 @@ const CardOption = (props: Props) => {
       (props.disabled && "cursor-not-allowed bg-neutral-100 text-neutral-500")
     }>
       <a href={'/visualizar-arquivo/'+props.slug} target="_blank" className="flex gap-3 items-center w-56">
-        <p className="text-sm font-medium text-neutral-800 overflow-hidden text-nowrap text-ellipsis" title={props.title}>
+        <p className="text-sm font-medium text-neutral-800 overflow-hidden text-nowrap text-ellipsis hover:underline" title={props.title}>
           {props.title}
         </p>
         <span className="text-neutral-600 text-xs font-medium ml-3">{props.size}</span>

@@ -120,7 +120,7 @@ function App() {
                 <a href="https://github.com/vnxcius/jvlf" className="underline font-medium hover:text-blue-500">
                   Vinícius Hilton
                 </a>
-                <span className="text-xs text-neutral-400 mx-4 self-end">v0.1.6</span>
+                <span className="text-xs text-neutral-400 mx-4 self-end">v1.2</span>
               </p>
             </CardContent>
           </Card>
