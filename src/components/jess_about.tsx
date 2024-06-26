@@ -6,8 +6,8 @@ const JessAbout = () => {
         <div className='flex justify-center gap-4 items-center'>
         <img className='size-10' alt='golang icon' draggable='false'
             src='/icons/itil.svg' />
-          <img className='size-12 object-contain' alt='cobit icon' draggable='false' title="Cobit 2019"
-            src='/icons/cobit.png' />
+          <img className='size-20 object-contain' alt='cobit icon' draggable='false' title="Cobit 2019"
+            src='/icons/cobit.webp' />
           <img className='size-10' alt='pmi icon' draggable='false' title="PMI"
             src='/icons/pmi.png' />
           <img className='size-14' alt='iso 38500 logo' draggable='false' title="ISO 38500" 
