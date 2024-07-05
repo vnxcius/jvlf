@@ -9,6 +9,7 @@ import Header from "./components/header"
 import ViniAbout from "./components/vini_about"
 
 import './App.css'
+import JessAbout from "./components/jess_about"
 
 function App() {
   const [file, setFile] = useState<Files>();
@@ -20,7 +21,7 @@ function App() {
       case 'VH':
         return <ViniAbout />
       case 'JS':
-        return 'Jéssica Simas'
+        return <JessAbout />
       case 'LA':
         return 'Lusianna Assunção'
       case 'FM':
